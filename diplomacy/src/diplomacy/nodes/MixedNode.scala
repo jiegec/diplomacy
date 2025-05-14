@@ -329,9 +329,11 @@ abstract class MixedNode[DI, UI, EI, BI <: Data, DO, UO, EO, BO <: Data](
     * edge parameters and later build up correct bundle connections.
     *
     * [[oPortMapping]]: `Seq[(Int, Int)]` where each item is the range of edges corresponding to that oPort (binding
-    * operator). [[iPortMapping]]: `Seq[(Int, Int)]` where each item is the range of edges corresponding to that iPort
-    * (binding operator). [[oStar]]: `Int` the value to return for this node `N` for any `N :*= foo` or `N :*=* foo :*=
-    * bar` [[iStar]]: `Int` the value to return for this node `N` for any `foo :=* N` or `bar :=* foo :*=* N`
+    * operator). 
+    * [[iPortMapping]]: `Seq[(Int, Int)]` where each item is the range of edges corresponding to that iPort
+    * (binding operator).
+    * [[oStar]]: `Int` the value to return for this node `N` for any `N :*= foo` or `N :*=* foo :*= bar`.
+    * [[iStar]]: `Int` the value to return for this node `N` for any `foo :=* N` or `bar :=* foo :*=* N`.
     */
   protected[diplomacy] lazy val (
     oPortMapping: Seq[(Int, Int)],
